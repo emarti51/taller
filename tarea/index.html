@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mis Materias Académicas</title>
+    <link rel="stylesheet" href="styles.css">
+    <script>
+        if ('serviceWorker' in navigator) {
+          navigator.serviceWorker.register('service-worker.js')
+            .then(function(registration) {
+              console.log('Service Worker registrado con éxito:', registration);
+            })
+            .catch(function(error) {
+              console.log('Error al registrar el Service Worker:', error);
+            });
+        }
+      </script>
+      
+</head>
+<body>
+    <h1>Mis Materias Académicas</h1>
+
+    <!-- Formulario para agregar una materia -->
+    <form id="materia-form">
+        <input type="text" id="materia" placeholder="Materia" required>
+        <input type="number" id="nota" placeholder="Nota" required>
+        <label>Aprobado: <input type="checkbox" id="aprobado"></label>
+        <button type="submit">Agregar Materia</button>
+    </form>
+
+    <!-- Lista de materias -->
+    <ul id="materias-list"></ul>
+
+    <script src="script.js"></script>
+</body>
+</html>
